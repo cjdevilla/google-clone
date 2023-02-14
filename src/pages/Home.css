@@ -1,0 +1,117 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .home__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 30px;
+    align-items: center;
+  }
+  
+  .home__header a {
+    margin-right: 20px;
+    text-decoration: inherit;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 15px;
+  }
+  
+  .home__header a:hover {
+    text-decoration: underline;
+  }
+  
+  .home__headerRight {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 13vw;
+  }
+  
+  .home__headerRight > .MuiSvgIcon-root {
+    margin-right: 20px;
+  }
+  
+  .home__body {
+    flex: 1;
+    display: flex;
+    margin-top: 10%;
+    flex-direction: column;
+  }
+  
+  .home__body > img {
+    object-fit: contain;
+    height: 100px;
+  }
+  
+  .home__inputContainer {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .home__translation {
+    display: block!important;
+  }
+
+  .home__translation a {
+    align-items: center;
+    padding: 10px;
+    text-decoration: none;
+  }
+
+  .home__translation a:hover {
+    text-decoration: underline;
+  }
+  
+  @media screen and (max-width: 750px) {
+  
+  .search {
+      max-width: 560px;
+  }
+  .home__body > img {
+    object-fit: contain;
+    height: 70px;
+  }
+
+  .home__footer__secondRow {
+    max-width: 560px;
+    flex-direction: column;
+    align-items: center;
+  }
+
+.home__footer__secondRowRight {
+    padding-top: 10px;
+  }
+  
+  }
+
+  .home__footer {
+    background-color: #F2F2F2;
+
+  }
+
+  .home__footer__firstRow {
+    padding: 15px 15px 15px 30px;
+    justify-content: space-between;
+  }
+
+  .home__footer__secondRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 13vw;
+    padding: 15px;
+
+}
+.home__footer__secondRow a {
+    text-decoration: inherit;
+    color: rgba(0, 0, 0, 0.87);
+    font-size: 15px;
+    margin: 15px;
+}
+
+.home__footer__secondRow a:hover {
+    text-decoration: underline;
+  }
+
