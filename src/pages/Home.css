@@ -44,15 +44,19 @@
     object-fit: contain;
     height: 100px;
   }
+
+  div.home__translation {
+    display: -webkit-inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+  }
   
   .home__inputContainer {
     display: flex;
     flex-direction: column;
   }
 
-  .home__translation {
-    display: block!important;
-  }
 
   .home__translation a {
     align-items: center;
