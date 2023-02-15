@@ -6,7 +6,7 @@ function SearchPage() {
   return (
     <div className="searchPage">
       <div className="searchPage__header">
-        <h1>{inputValue}</h1>
+        <h1>Test</h1>
       </div>
 
       <div className="searchPage__results"></div>

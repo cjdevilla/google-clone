@@ -6,6 +6,7 @@ import MicIcon from "@material-ui/icons/Mic";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import SearchPage from "../pages/SearchPage";
 
 function Search() {
   const [inputValue, setInputValue] = useState("");
@@ -17,7 +18,8 @@ function Search() {
 
   const handleSearch = (event) => {
     event.preventDefault();
-    history.push(`/search/${inputValue}`);
+    console.log(inputValue);
+    // history.(`/search/${inputValue}`);
   };
 
   return (
@@ -30,7 +32,11 @@ function Search() {
       </div>
 
       <div className="search__buttons">
-        <Button variant="outlined" type="submit">
+        <Button
+          variant="outlined"
+          type="submit"
+          onClick={() => history.pushState(`/search?query=${SearchPage}`)}
+        >
           Google Search
         </Button>
         <Button variant="outlined">I'm Feeling Lucky</Button>
