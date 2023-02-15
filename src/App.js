@@ -10,7 +10,6 @@ import Home from "./pages/Home";
 import List from "./components/List";
 import SearchPage from "./pages/SearchPage";
 import Search from "./components/Search";
-import SearchResultPage from "./pages/SearchResultPage";
 
 function App() {
   const data = [
@@ -24,19 +23,13 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route
-            path="/search:query"
-            element={<SearchPage />}
-            component={<List title="My List" items={data} />}
-          />
+          <Route path="/search:query" element={Search} />
           <Route path="/" element={<Home />} />
-          <Route path="/searchresultpage/" element={<SearchResultPage />} />
           {/* <Route path="/SearchPage:query" element={<SearchPage />} /> */}
         </Routes>
         {/* <div>
           <List title="My List" items={data} />
         </div> */}
-        {/* <List title="My List" items={data} /> */}
       </BrowserRouter>
     </div>
   );
