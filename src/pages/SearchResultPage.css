@@ -1,0 +1,19 @@
+.searchResultPage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.searchResultPage__header {
+    display: flex;
+    flex-direction:row;
+    padding: 20px 30px;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.searchResultPage__headerLeftLogo {
+    height: 30px;
+    width: 92px;
+    align-items:flex-start;
+}
