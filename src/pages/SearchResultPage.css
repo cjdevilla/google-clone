@@ -1,19 +1,64 @@
-.searchResultPage {
+
+
+.searchPage__header {
     display: flex;
-    flex-direction: column;
-    height: 100vh;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 100;
+    align-items: flex-start;
+    padding: 20px 40px;
+    padding-left: 50px;
+    border-bottom: 1px solid lightgray;
 }
 
-.searchResultPage__header {
-    display: flex;
-    flex-direction:row;
-    padding: 20px 30px;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.searchResultPage__headerLeftLogo {
+.searchPage__logo {
+    object-fit: contain;
     height: 30px;
-    width: 92px;
-    align-items:flex-start;
+    transform: scale(1.7);
+    margin-right: 50px;
+}
+
+.searchPage__headerBody > .search > .search__input {
+    margin-top: 0;
+    width: unset;
+    margin: unset;
+    max-width: unset;
+}
+
+.searchPage__option {
+    margin-left: 40px;
+    display: flex;
+    font-size: 13px;
+    align-items: center;
+    color: gray;
+}
+
+.searchPage__option a,
+.searchPage__optionsRight a{
+    text-decoration: none;
+    color: gray;
+}
+
+.searchPage__optionsLeft,
+.searchPage__optionsRight {
+    display: flex;
+}
+
+.searchPage__optionsRight {
+    margin-left: 80px;
+}
+
+.searchPage__option {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+}
+
+.searchPage__option a {
+    margin-left: 5px;
+}
+
+.searchResultPage_headerRight {
+    display:flex-end;
 }

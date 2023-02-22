@@ -7,33 +7,44 @@ import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 
-function Search() {
-  const [inputValue, setInputValue] = useState("");
-  const history = useNavigate();
+function Search({ hideButtons = false }) {
+  const [searchQuery, setSearchQuery] = useState("");
+  const navigate = useNavigate();
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSearch = (event) => {
+  function handleSearch(event) {
     event.preventDefault();
-    history.push(`/search/${inputValue}`);
-  };
+    navigate(`/search/${searchQuery}`);
+  }
 
   return (
     <form className="search" onSubmit={handleSearch}>
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input type="text" value={inputValue} onChange={handleInputChange} />
+        <input
+          type="text"
+          value={searchQuery}
+          onChange={(event) => setSearchQuery(event.target.value)}
+        />
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />
       </div>
 
       <div className="search__buttons">
-        <Button variant="outlined" type="submit">
-          Google Search
-        </Button>
-        <Button variant="outlined">I'm Feeling Lucky</Button>
+        {!hideButtons ? (
+          <>
+            <Button variant="outlined">Google Search</Button>
+            <Button variant="outlined">I'm Feeling Lucky</Button>
+          </>
+        ) : (
+          <>
+            <Button style="display:none;" variant="outlined">
+              Google Search
+            </Button>
+            <Button className="search__buttonsHidden" variant="outlined">
+              I'm Feeling Lucky
+            </Button>
+          </>
+        )}
       </div>
     </form>
   );

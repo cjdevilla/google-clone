@@ -1,61 +1,75 @@
 import React from "react";
 import "./SearchResultPage.css";
 import SearchIcon from "@material-ui/icons/Search";
-import MicIcon from "@material-ui/icons/Mic";
-import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import SettingsIcon from "@material-ui/icons/Settings";
 import AppsIcon from "@material-ui/icons/Apps";
 import { Avatar } from "@material-ui/core";
 import PhotoOutlinedIcon from "@material-ui/icons/PhotoOutlined";
 import SlideshowOutlinedIcon from "@material-ui/icons/SlideshowOutlined";
+import SearchResultItem from "../components/SearchResultItem";
+import DescriptionIcon from "@material-ui/icons/Description";
+import ImageIcon from "@material-ui/icons/Image";
+import LocalOfferIcon from "@material-ui/icons/LocalOffer";
+import RoomIcon from "@material-ui/icons/Room";
+import MoreVertIcon from "@material-ui/icons/MoreVert";
+import { Link } from "react-router-dom";
+
+import Search from "../components/Search";
 
 function SearchResultPage() {
   return (
     <div className="searchResultPage">
-      <div className="searchResultPage__header">
+      <div className="searchPage__header">
         <div className="searchResultPage__headerLeft">
           <img
-            className="searchResultPage__headerLeftLogo"
+            className="searchPage__logo"
             src="https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_92x30dp.png"
             alt="Google"
           />
         </div>
 
-        <div className="searchResultPage__headerLeft__searchBar">
-          <form className="search">
-            <div className="search__input">
-              <SearchIcon className="search__inputIcon" />
-              <input type="text" />
-              <MicIcon />
-              <PhotoCameraIcon className="search__photoCamera" />
-              <SearchIcon />
-            </div>
-          </form>
+        <div className="searchPage__headerBody">
+          <Search />
 
-          <div className="searchResultPage__headerFilters">
-            <ul>
-              <li>
-                <SearchIcon />
-                All
-              </li>
-              <li>
-                <PhotoOutlinedIcon /> Images
-              </li>
-              <li>
-                <SlideshowOutlinedIcon />
-                Videos
-              </li>
-              <li>News</li>
-              <li>Books</li>
-              <li>Shopping</li>
-              <li>More</li>
-            </ul>
+          <div className="searchPage__optionsLeft">
+            <div className="searchPage__option">
+              <SearchIcon />
+              <Link to="/all">All</Link>
+            </div>
+            <div className="searchPage__option">
+              <DescriptionIcon />
+              <Link to="/news">News</Link>
+            </div>
+            <div className="searchPage__option">
+              <ImageIcon />
+              <Link to="/images">Images</Link>
+            </div>
+            <div className="searchPage__option">
+              <LocalOfferIcon />
+              <Link to="/shopping">Shopping</Link>
+            </div>
+            <div className="searchPage__option">
+              <RoomIcon />
+              <Link to="/maps">Maps</Link>
+            </div>
+            <div className="searchPage__option">
+              <MoreVertIcon />
+              <Link to="/more">More</Link>
+            </div>
           </div>
         </div>
         <div className="searchResultPage_headerRight">
-          <SettingsIcon />
-          <AppsIcon />
-          <Avatar />
+          <div className="searchPage__option">
+            <Link to="/settings">
+              <SettingsIcon />
+            </Link>
+            <Link to="/apps">
+              <AppsIcon />
+            </Link>
+            <Link to="/user">
+              <Avatar />
+            </Link>
+          </div>
         </div>
       </div>
       <hr></hr>
