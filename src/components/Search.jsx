@@ -7,8 +7,8 @@ import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
 
-function Search({ hideButtons = false }) {
-  const [searchQuery, setSearchQuery] = useState("");
+function Search({ hideButtons = false, searchInputQuery = "" }) {
+  const [searchQuery, setSearchQuery] = useState(searchInputQuery);
   const navigate = useNavigate();
 
   function handleSearch(event) {
@@ -37,7 +37,7 @@ function Search({ hideButtons = false }) {
           </>
         ) : (
           <>
-            <Button style="display:none;" variant="outlined">
+            <Button className="search__buttonsHidden" variant="outlined">
               Google Search
             </Button>
             <Button className="search__buttonsHidden" variant="outlined">

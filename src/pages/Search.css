@@ -67,3 +67,8 @@
       height: 20px;
     }
   }
+
+  .search__buttonsHidden.MuiButton-root {
+    display: none;
+  }
+  

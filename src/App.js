@@ -24,9 +24,8 @@ function App() {
     <div className="app">
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/searchpage" element={<SearchPage />} />
-          <Route path="/search/:query" element={<SearchResultPage />} />
+          <Route exact path="/" element={<Home />} />
+          <Route exact path="/search/:query" element={<SearchResultPage />} />
         </Routes>
         {/* <div>
           <List title="My List" items={data} />
