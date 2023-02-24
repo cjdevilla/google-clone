@@ -6,14 +6,24 @@ import MicIcon from "@material-ui/icons/Mic";
 import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
 import { Button } from "@material-ui/core";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../reducer";
 
-function Search({ hideButtons = false, searchInputQuery = "" }) {
-  const [searchQuery, setSearchQuery] = useState(searchInputQuery);
+function Search({ hideButtons = false }) {
+  const [{}, dispatch] = useStateValue();
+  const [term, setTerm] = useState();
   const navigate = useNavigate();
 
   function handleSearch(event) {
     event.preventDefault();
-    navigate(`/search/${searchQuery}`);
+    console.log("search!");
+
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: term,
+    });
+
+    navigate(`/search/${term}`);
   }
 
   return (
@@ -22,8 +32,8 @@ function Search({ hideButtons = false, searchInputQuery = "" }) {
         <SearchIcon className="search__inputIcon" />
         <input
           type="text"
-          value={searchQuery}
-          onChange={(event) => setSearchQuery(event.target.value)}
+          value={term}
+          onChange={(event) => setTerm(event.target.value)}
         />
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />

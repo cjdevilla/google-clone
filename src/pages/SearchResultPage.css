@@ -1,34 +1,63 @@
+/* Desktop styles */
+
+.searchResultPage__optionsLeftHidden {
+  display:none;
+}
+
+.searchResultPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
 .searchResultPage__header {
-    display: flex;
-    position: sticky;
-    top: 0;
-    background-color: white;
-    z-index: 100;
-    align-items: flex-start;
-    padding: 20px 20px;
-    padding-left: 60px;
-    border-bottom: 0.5px solid lightgray;
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 0.5px solid lightgray;
+  z-index: 100;
+}
+
+.searchResultPage__headerLeft {
+  display: flex;
+  align-items: center;
 }
 
 .searchResultPage__logo {
-    object-fit: contain;
-    height: 40px;
-    margin-right: 50px;
-    margin-top: 10px;
+  height: 30px;
+  margin-top: 10px;
 }
 
-.searchResultPage__headerBody > .search > .search__input {
-    margin-top: 0;
-    width: unset;
-    margin: unset;
-    max-width: unset;
+.searchResultPage__headerBody {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.searchResultPage__options {
+  justify-content: center;
+  margin:10px 0px 10px 0px;
+}
+
+
+.searchResultPage__optionsLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin-left: 150px;
 }
 
 .searchResultPage__option {
-    margin-left: 40px;
-    font-size: 13px;
-    align-items: center;
-    color: gray;
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color: gray;
 }
 
 .searchResultPage__option a,
@@ -37,24 +66,47 @@
     color: gray;
 }
 
-.searchResultPage__optionsLeft {
-    display: flex;
-}
-
-/* .searchResultPage__optionsRight {
-    margin-left: 80px;
-} */
-
-.searchResultPage__option {
-    display: flex;
-    align-items: center;
- 
-}
-
 .searchResultPage__option a {
-    margin-left: 5px;
+    margin-left: 10px;
 }
 
-/* div.searchResultPage_headerRight {
-    display:flex-end;
-} */
+.searchResultPage__body {
+  flex: 1;
+  padding: 20px;
+}
+
+.searchResultPage__bodyResultStats {
+  margin-bottom: 20px;
+}
+
+.searchResultPage__body {
+  margin: 0px 0px 10px 130px;
+}
+
+  
+  /* Mobile styles */
+  @media screen and (max-width: 750px)  {
+    .searchResultPage__header {
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .searchResultPage__headerLeft {
+      margin-bottom: 20px;
+    }
+  
+    .searchResultPage__headerBody {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+  
+    .searchResultPage__optionsLeft {
+      margin: 20px 0;
+    }
+  
+    .searchResultPage_headerRight {
+      margin-left: auto;
+    }
+  }
+  

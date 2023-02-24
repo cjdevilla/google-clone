@@ -1,10 +1,11 @@
 import React from "react";
+import "./SearchResultItem.css";
 
 function SearchResultItem(props) {
   return (
-    <div>
-      <h3> {props.name} </h3>
-      <p>{props.description} </p>
+    <div className="searchResultItem">
+      <h3 className="searchResultItem__name"> {props.name} </h3>
+      <p className="searchResultItem__description">{props.description} </p>
     </div>
   );
 }
