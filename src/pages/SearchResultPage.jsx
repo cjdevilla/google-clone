@@ -9,9 +9,13 @@ import Search from "../components/Search";
 import { StateProvider } from "../StateProvider";
 import List from "../components/List";
 import Options from "../components/Options";
+import useGoogleSearch from "../useGoogleSearch";
 
 function SearchResultPage({ data }) {
   const { term } = useParams();
+
+  const { googleData } = useGoogleSearch(term);
+  console.log(googleData);
 
   return (
     <div className="searchResultPage">
