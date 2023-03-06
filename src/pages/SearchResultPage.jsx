@@ -3,7 +3,7 @@ import "./SearchResultPage.css";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Avatar } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import reducer, { initialState } from "../reducer";
 import Search from "../components/Search";
 import { StateProvider, useStateValue } from "../StateProvider";
