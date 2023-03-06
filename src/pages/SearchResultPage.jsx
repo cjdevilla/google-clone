@@ -1,18 +1,19 @@
 import React from "react";
 import "./SearchResultPage.css";
-import SettingsIcon from "@material-ui/icons/Settings";
-import AppsIcon from "@material-ui/icons/Apps";
-import { Avatar } from "@material-ui/core";
+import SettingsIcon from "@mui/icons-material/Settings";
+import AppsIcon from "@mui/icons-material/Apps";
+import { Avatar } from "@mui/material";
 import { Link, useParams } from "react-router-dom";
 import reducer, { initialState } from "../reducer";
 import Search from "../components/Search";
-import { StateProvider } from "../StateProvider";
+import { StateProvider, useStateValue } from "../StateProvider";
 import List from "../components/List";
 import Options from "../components/Options";
 import useGoogleSearch from "../useGoogleSearch";
 
 function SearchResultPage({ data }) {
-  const { term } = useParams();
+  // const { term } = useParams();
+  const [{ term }, dispatch] = useStateValue();
 
   const { googleData } = useGoogleSearch(term);
   console.log(googleData);

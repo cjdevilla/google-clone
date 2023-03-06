@@ -1,10 +1,10 @@
 import React from "react";
 import { useState } from "react";
 import "../pages/Search.css";
-import SearchIcon from "@material-ui/icons/Search";
-import MicIcon from "@material-ui/icons/Mic";
-import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
-import { Button } from "@material-ui/core";
+import SearchIcon from "@mui/icons-material/Search";
+import MicIcon from "@mui/icons-material/Mic";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { useStateValue } from "../StateProvider";
 import { actionTypes } from "../reducer";
