@@ -11,6 +11,20 @@ p {
     margin-bottom: 10px;
 }
 
+.searchResultItem ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.searchResultItem li {
+    margin-top: 20px;
+}
+
+.searchResultItem__Title {
+    font-size: 20px;
+    line-height: 26px;
+}
+
 .searchResultItem__name {
     font-size: 20px;
     line-height: 26px;

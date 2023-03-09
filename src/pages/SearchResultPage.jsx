@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./SearchResultPage.css";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
@@ -7,16 +7,20 @@ import { Link } from "react-router-dom";
 import reducer, { initialState } from "../reducer";
 import Search from "../components/Search";
 import { StateProvider, useStateValue } from "../StateProvider";
-import List from "../components/List";
 import Options from "../components/Options";
 import useGoogleSearch from "../useGoogleSearch";
+import SearchResultItem from "../components/SearchResultItem";
 
 function SearchResultPage({ data }) {
   // const { term } = useParams();
   const [{ term }, dispatch] = useStateValue();
 
   const { googleData } = useGoogleSearch(term);
-  console.log(googleData);
+  const [searchResults, setSearchResults] = useState([]);
+
+  useEffect(() => {
+    setSearchResults(googleData?.items);
+  }, [googleData]);
 
   return (
     <div className="searchResultPage">
@@ -55,11 +59,11 @@ function SearchResultPage({ data }) {
 
       <div className="searchResultPage__body">
         <div className="searchResultPage__bodyResultStats">
-          <p>About {data.length} results</p>
+          <p>About results</p>
         </div>
 
         <div className="searchResultPage_bodyResultItems">
-          <List className="searchResultPage__data" items={data} />
+          <SearchResultItem searchResults={searchResults} />
         </div>
       </div>
     </div>
