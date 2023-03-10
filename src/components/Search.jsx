@@ -11,7 +11,7 @@ import { actionTypes } from "../reducer";
 
 function Search({ hideButtons = false }) {
   const [{}, dispatch] = useStateValue();
-  const [term, setTerm] = useState();
+  const [term, setTerm] = useState("");
   const navigate = useNavigate();
 
   function handleSearch(event) {
@@ -26,15 +26,15 @@ function Search({ hideButtons = false }) {
     navigate(`/search/${term}`);
   }
 
+  function handleInputChange(event) {
+    setTerm(event.target.value);
+  }
+
   return (
     <form className="search" onSubmit={handleSearch}>
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input
-          type="text"
-          value={term}
-          onChange={(event) => setTerm(event.target.value)}
-        />
+        <input type="text" value={term} onChange={handleInputChange} />
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />
       </div>
