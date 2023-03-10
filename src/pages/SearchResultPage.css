@@ -1,0 +1,112 @@
+/* Desktop styles */
+
+.searchResultPage__optionsLeftHidden {
+  display:none;
+}
+
+.searchResultPage {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+
+}
+
+.searchResultPage__header {
+  display: flex;
+  align-items: center;
+  padding: 0px 30px;
+  position: sticky;
+  top: 0;
+  background: white;
+  border-bottom: 0.5px solid lightgray;
+  z-index: 100;
+}
+
+.searchResultPage__headerLeft {
+  display: flex;
+  align-items: center;
+}
+
+.searchResultPage__logo {
+  height: 30px;
+  margin-top: 10px;
+}
+
+.searchResultPage__headerBody {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  margin: 0 20px;
+}
+
+.searchResultPage__options {
+  justify-content: center;
+  margin:10px 0px 10px 0px;
+}
+
+
+.searchResultPage__optionsLeft {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  max-width: 600px;
+  margin-left: 150px;
+}
+
+.searchResultPage__option {
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  color: gray;
+}
+
+.searchResultPage__option a,
+.searchResultPage__optionsRight a{
+    text-decoration: none;
+    color: gray;
+}
+
+.searchResultPage__option a {
+    margin-left: 10px;
+}
+
+.searchResultPage__body {
+  flex: 1;
+  padding: 20px;
+}
+
+.searchResultPage__bodyResultStats {
+  margin-bottom: 20px;
+}
+
+.searchResultPage__body {
+  margin: 0px 0px 10px 130px;
+}
+
+  
+  /* Mobile styles */
+  @media screen and (max-width: 750px)  {
+    .searchResultPage__header {
+      flex-direction: column;
+      justify-content: center;
+    }
+  
+    .searchResultPage__headerLeft {
+      margin-bottom: 20px;
+    }
+  
+    .searchResultPage__headerBody {
+      flex-direction: column;
+      align-items: flex-start;
+      margin: 0;
+    }
+  
+    .searchResultPage__optionsLeft {
+      margin: 20px 0;
+    }
+  
+    .searchResultPage_headerRight {
+      margin-left: auto;
+    }
+  }
+  
