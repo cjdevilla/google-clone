@@ -34,7 +34,7 @@ function Search({ hideButtons = false }) {
     <form className="search" onSubmit={handleSearch}>
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input type="text" value={term} onChange={handleInputChange} />
+        <input type="text" value={term} onChange={handleInputChange} /> 
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />
       </div>
