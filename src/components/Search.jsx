@@ -34,7 +34,7 @@ function Search({ hideButtons = false }) {
     <form className="search" onSubmit={handleSearch}>
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input type="text" value={term} onChange={handleInputChange} /> 
+        <input type="text" value={term} onChange={handleInputChange} />
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />
       </div>
@@ -42,12 +42,18 @@ function Search({ hideButtons = false }) {
       <div className="search__buttons">
         {!hideButtons ? (
           <>
-            <Button variant="outlined">Google Search</Button>
+            <Button variant="outlined" onClick={handleSearch}>
+              Google Search
+            </Button>
             <Button variant="outlined">I'm Feeling Lucky</Button>
           </>
         ) : (
           <>
-            <Button className="search__buttonsHidden" variant="outlined">
+            <Button
+              className="search__buttonsHidden"
+              variant="outlined"
+              onClick={handleSearch}
+            >
               Google Search
             </Button>
             <Button className="search__buttonsHidden" variant="outlined">
