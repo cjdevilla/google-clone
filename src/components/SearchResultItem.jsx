@@ -4,7 +4,7 @@ import "./SearchResultItem.css";
 import useGoogleSearch from "../custom-hooks/useGoogleSearch";
 
 function SearchResultItem({ term }) {
-  console.log("Nico: " + term);
+
   const { data } = useGoogleSearch(term);
 
   return (
@@ -12,9 +12,9 @@ function SearchResultItem({ term }) {
       <div>
         {data && (
           <ul>
-            {data.map((result) => (
-              <li key={result.cacheId}>
-                <a class="searchResultItem__Title" href={result.link}>
+            {data.map((result, index) => (
+              <li key={index}>
+                <a className="searchResultItem__Title" href={result.link}>
                   {result.title}
                 </a>
                 <p>{result.snippet}</p>

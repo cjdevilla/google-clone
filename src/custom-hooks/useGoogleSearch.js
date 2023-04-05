@@ -21,7 +21,7 @@ const useGoogleSearch = (term) => {
       .catch((error) => {
         console.log(error);
       });
-  }, [term, data]);
+  }, [term]);
   return { data };
 };
 

@@ -1,20 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./SearchResultPage.css";
 import SettingsIcon from "@mui/icons-material/Settings";
 import AppsIcon from "@mui/icons-material/Apps";
 import { Avatar } from "@mui/material";
-import { Link, useParams } from "react-router-dom";
-import reducer, { initialState } from "../reducer";
+import { Link } from "react-router-dom";
 import Search from "../components/Search";
-import { StateProvider, useStateValue } from "../StateProvider";
+import { useStateValue } from "../StateProvider";
 import Options from "../components/Options";
 import SearchResultItem from "../components/SearchResultItem";
 
 function SearchResultPage({ data }) {
   const [{ term }, dispatch] = useStateValue();
-
-  const [searchResults, setSearchResults] = useState([]);
-
   return (
     <div className="searchResultPage">
       <div className="searchResultPage__header">
@@ -28,9 +24,7 @@ function SearchResultPage({ data }) {
         </div>
 
         <div className="searchResultPage__headerBody">
-          <StateProvider initialState={initialState} reducer={reducer}>
-            <Search hideButtons={true} searchTerm={term} />
-          </StateProvider>
+          <Search hideButtons={true} searchTerm={term} />
         </div>
 
         <div className="searchResultPage_headerRight">
@@ -56,9 +50,7 @@ function SearchResultPage({ data }) {
         </div>
 
         <div className="searchResultPage_bodyResultItems">
-          <StateProvider initialState={initialState} reducer={reducer}>
-            <SearchResultItem term={term} />
-          </StateProvider>
+          <SearchResultItem term={term} />
         </div>
       </div>
     </div>

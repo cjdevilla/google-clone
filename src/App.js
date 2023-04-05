@@ -1,14 +1,6 @@
 import "./App.css";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  BrowserRouter,
-  Routes,
-} from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
-import SearchPage from "./pages/SearchPage";
-import Search from "./components/Search";
 import SearchResultPage from "./pages/SearchResultPage";
 
 function App() {
@@ -25,4 +17,3 @@ function App() {
 }
 
 export default App;
-
