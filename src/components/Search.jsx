@@ -1,39 +1,66 @@
 import React from "react";
 import { useState } from "react";
 import "../pages/Search.css";
-import SearchIcon from "@material-ui/icons/Search";
-import MicIcon from "@material-ui/icons/Mic";
-import PhotoCameraIcon from "@material-ui/icons/PhotoCamera";
-import { Button } from "@material-ui/core";
+import SearchIcon from "@mui/icons-material/Search";
+import MicIcon from "@mui/icons-material/Mic";
+import PhotoCameraIcon from "@mui/icons-material/PhotoCamera";
+import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useStateValue } from "../StateProvider";
+import { actionTypes } from "../reducer";
 
-function Search() {
-  const [inputValue, setInputValue] = useState("");
-  const history = useNavigate();
+function Search({ hideButtons = false }) {
+  const [{}, dispatch] = useStateValue();
+  const [term, setTerm] = useState("");
+  const navigate = useNavigate();
 
-  const handleInputChange = (event) => {
-    setInputValue(event.target.value);
-  };
-
-  const handleSearch = (event) => {
+  function handleSearch(event) {
     event.preventDefault();
-    history.push(`/search/${inputValue}`);
-  };
+ 
+
+    dispatch({
+      type: actionTypes.SET_SEARCH_TERM,
+      term: term,
+    });
+
+    navigate(`/search/${term}`);
+  }
+
+  function handleInputChange(event) {
+    setTerm(event.target.value);
+  }
 
   return (
     <form className="search" onSubmit={handleSearch}>
       <div className="search__input">
         <SearchIcon className="search__inputIcon" />
-        <input type="text" value={inputValue} onChange={handleInputChange} />
+        <input type="text" value={term} onChange={handleInputChange} />
         <MicIcon />
         <PhotoCameraIcon className="search__photoCamera" />
       </div>
 
       <div className="search__buttons">
-        <Button variant="outlined" type="submit">
-          Google Search
-        </Button>
-        <Button variant="outlined">I'm Feeling Lucky</Button>
+        {!hideButtons ? (
+          <>
+            <Button variant="outlined" onClick={handleSearch}>
+              Google Search
+            </Button>
+            <Button variant="outlined">I'm Feeling Lucky</Button>
+          </>
+        ) : (
+          <>
+            <Button
+              className="search__buttonsHidden"
+              variant="outlined"
+              onClick={handleSearch}
+            >
+              Google Search
+            </Button>
+            <Button className="search__buttonsHidden" variant="outlined">
+              I'm Feeling Lucky
+            </Button>
+          </>
+        )}
       </div>
     </form>
   );
